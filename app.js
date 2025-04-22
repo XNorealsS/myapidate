@@ -2,16 +2,14 @@ import express from 'express';
 import * as technicalIndicators from 'technicalindicators';
 import { linearRegression } from 'simple-statistics';
 import axios from 'axios';
-const app = express();
-const port = 3000;
 
+const app = express();
 
 const BINANCE_API_URL = 'https://fapi.binance.com/fapi/v1';
 
 app.get('/analyze', async (req, res) => {
     try {
-        const { symbol } = req.query; // Ambil parameter 'symbol' dari query string
-        const { interval } = req.query; // Ambil parameter 'symbol' dari query string
+        const { symbol, interval } = req.query;  // Ambil parameter 'symbol' dan 'interval' dari query string
         const accuracyThreshold = 60;
         const Volatilitylct = 'All';
 
@@ -47,11 +45,6 @@ app.get('/analyze', async (req, res) => {
         console.error('Error in /analyze endpoint:', error);
         res.status(500).json({ status: 'error', message: error.message });
     }
-});
-
-
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
 });
 
 
@@ -954,4 +947,4 @@ function generateReasoning(currentPrice, indicators, marketStructure, direction,
     };
 }
 
-
+export default app;
