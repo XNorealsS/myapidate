@@ -1,12 +1,15 @@
 {
-  "name": "my-app",
+  "name": "signalsearchers",
   "version": "1.0.0",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "build": "echo 'No build step needed'"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
-    "axios": "^0.21.1"
+    "simple-statistics": "^7.0.0",
+    "technicalindicators": "^3.1.0"
   }
 }
