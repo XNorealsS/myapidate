@@ -4,6 +4,7 @@ import { linearRegression } from 'simple-statistics';
 import axios from 'axios';
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const BINANCE_API_URL = 'https://fapi.binance.com/fapi/v1';
 
@@ -49,6 +50,11 @@ app.get('/analyze', async (req, res) => {
 
 app.get('/', (req, res) => {
     res.send('Server is running!');
+});
+
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
 
 
