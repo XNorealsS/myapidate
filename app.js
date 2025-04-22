@@ -47,6 +47,9 @@ app.get('/analyze', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+});
 
 
 async function getFuturesSymbolsFromBinance() {
