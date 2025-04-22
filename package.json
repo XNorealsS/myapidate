@@ -1,16 +1,12 @@
 {
-  "name": "laravel-node-api",
+  "name": "my-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "echo 'No build step needed'"
   },
-  "type": "module",
   "dependencies": {
-    "axios": "^0.21.1",
     "express": "^4.17.1",
-    "simple-statistics": "^7.0.0",
-    "technicalindicators": "^3.0.0"
+    "axios": "^0.21.1"
   }
 }
